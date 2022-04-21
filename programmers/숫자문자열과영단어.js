@@ -1,35 +1,12 @@
-function check(s,num){
-    for(var i in num){
-        if(s===num[i]){
-            return i;
-        }
-    }
-    return 0;
-}
-
 function solution(s) {
-    var answer = '';
-    var num = ['zero','one','two','three','four','five','six','seven','eight','nine'];
-    var line ='';
-    for(var i of s){
-        //console.log(i);
+    let numbers = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+    var answer = s;
 
-        if(isNaN(i)){
-            line = line.concat(i);
-            if(!check(line,num)){
-                continue;
-            }
-            else{
-                answer = answer.concat(check(line,num));
-                line = '';
-                
-            }
-                }
-        else{
-            answer = answer.concat(i);
-        }
+    for(let i=0; i< numbers.length; i++) {
+        let arr = answer.split(numbers[i]);
+        console.log(arr);
+        answer = arr.join(i);
     }
-    
-    
-    return parseInt(answer);
+
+    return Number(answer);
 }

@@ -30,9 +30,10 @@ void func2(int a[], int b[])
     {
         if (a[i] < b[i])
         {
-            int temp = a[i];
-            a[i] = b[i];
-            b[i] = temp;
+            // int temp = a[i];
+            // a[i] = b[i];
+            // b[i] = temp;
+            swap(a[i], b[i]);
         }
         else
             break;
@@ -57,7 +58,7 @@ int main()
     sort(b, b + n, greater<int>()); // 내림차순
     func1(a, b);
     //func2(a, b);
-    int result = 0;
+    long long result = 0;
     for (int i = 0; i < n; i++)
     {
         result += a[i];

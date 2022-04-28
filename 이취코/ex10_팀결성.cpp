@@ -17,8 +17,9 @@ void union_parent(int parent[], int a, int b)
 {
     // cout << a << ' ' << b << '\n';
     // cout << find_parent(parent, a) << ' ' << find_parent(parent, b);
-
-    if (find_parent(parent, a) < find_parent(parent, b))
+    a = find_parent(parent, a);
+    b = find_parent(parent, b);
+    if (a < b)
     {
         parent[b] = a;
     }

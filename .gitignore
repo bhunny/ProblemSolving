@@ -16,3 +16,5 @@
 
 *.dSYM
 */*.dSYM
+
+test.*

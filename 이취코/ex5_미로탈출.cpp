@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define x first
+#define y second
 int n, m;
 int graph[201][201];
 bool visit[201][201];
@@ -15,6 +17,8 @@ int bfs(int x, int y)
     {
         pair<int, int> now = Q.front();
         Q.pop();
+        //경로 확인
+        //cout << now.x << ' ' << now.y << '\n';
         for (int i = 0; i < 4; i++)
         {
             int nx = now.first + dx[i];
@@ -40,41 +44,31 @@ int main()
     cin >> n >> m;
     for (int i = 0; i < n; i++)
     {
-        string line;
-        cin >> line;
+        // string line;
+        // cin >> line;
         for (int j = 0; j < m; j++)
         {
-            graph[i][j] = line[j] - '0';
+            //     graph[i][j] = line[j] - '0';
+            scanf("%1d", &graph[i][j]);
         }
     }
     cout << bfs(0, 0);
 
-    // 결과 확인을 위한 코드
-
-    //cout << '\n';
-    // for (int i = 0; i < n; i++)
-    // {
-    //     for (int j = 0; j < m; j++)
-    //     {
-    //         cout << graph[i][j];
-    //     }
-    //     cout << '\n';
-    // }
-
     /*
-    test case 1
     5 6
     101010
     111111
     000001
     111111
     111111
+    ======
+    10
 
-    test case 2
     3 3
     110
     010
     011
-
+    ===
+    5
     */
 }

@@ -23,7 +23,7 @@ void func1()
             cout << "no" << ' ';
     }
 }
-// 이중탐색을 이용한 방식
+// 이진탐색을 이용한 방식
 int binary_search(int data[], int target, int start, int end)
 {
     int mid = start;
@@ -42,6 +42,20 @@ int binary_search(int data[], int target, int start, int end)
         }
     }
     return -1;
+}
+// 이진탐색 재귀방식
+bool binarySearch(int arr[], int target, int start, int end)
+{
+    if (start > end)
+        return false;
+    int mid = (start + end) / 2;
+    if (arr[mid] == target)
+        return true;
+    else if (arr[mid] < target)
+        return binarySearch(arr, target, mid + 1, end);
+    else //(arr[mid] > target)
+        return binarySearch(arr, target, start, mid - 1);
+    //return false;
 }
 void func2()
 {

@@ -20,7 +20,7 @@ void bfs()
         {
             int nx = cur.first + dx[i];
             int ny = cur.second + dy[i];
-            if (nx < 0 || nx > n || ny < 0 || ny > m)
+            if (nx < 0 || nx >= n || ny < 0 || ny >= m)
                 continue;
             if (board[nx][ny] != 1 || vis[nx][ny])
                 continue;

@@ -7,22 +7,22 @@ int dy[4] = {0, 1, 0, -1};
 int n, m;
 int areaMax;
 int num;
-void bfs(int i, int j)
+void bfs(int x, int y)
 {
     int area = 0;
     queue<pair<int, int>> q;
-    q.push({i, j});
-    vis[i][j] = 1;
+    q.push({x, y});
+    vis[x][y] = 1;
     while (!q.empty())
     {
         area++;
         pair<int, int> cur = q.front();
         q.pop();
-        for (i = 0; i < 4; i++)
+        for (int i = 0; i < 4; i++)
         {
             int nx = dx[i] + cur.first;
             int ny = dy[i] + cur.second;
-            if (nx < 0 || nx > m || ny < 0 || ny > m)
+            if (nx < 0 || nx >= n || ny < 0 || ny >= m)
                 continue;
             if (board[nx][ny] != 1 || vis[nx][ny])
                 continue;
